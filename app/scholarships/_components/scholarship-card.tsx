@@ -40,7 +40,7 @@ const ScholarshipAccordion = ({
   data,
 }: {
   title: string;
-  data: Record<string, any> | string[];
+  data: Eligibility | Benefits | string[];
 }) => {
   if (!data || (Array.isArray(data) && data.length === 0)) return null;
 
@@ -115,6 +115,7 @@ export const ScholarshipCard = React.memo(
                 <div>
                   <strong>Link:</strong>{" "}
                   <Link
+                    target={"_blank"}
                     href={scholarship.link}
                     className="text-blue-500 underline"
                   >
@@ -166,3 +167,5 @@ export const ScholarshipCard = React.memo(
     );
   },
 );
+
+ScholarshipCard.displayName = "ScholarshipCard";
